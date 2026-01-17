@@ -114,7 +114,7 @@
       color: var(--accent);
     }
 
-/* Hamburger button */
+    /* Hamburger button */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -126,41 +126,53 @@
 
 .hamburger span {
   width: 26px;
-  height: 3px;
-  background: white;
-  border-radius: 2px;
+  height: 2px;
+  background: #ffffff;
   transition: all 0.3s ease;
 }
 
-/* Mobile navigation */
+/* Mobile menu panel */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: #2f3e46;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  transition: right 0.35s ease;
+  z-index: 999;
+}
+
+.mobile-menu a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  color: var(--accent);
+}
+
+/* Active state */
+.mobile-menu.open {
+  right: 0;
+}
+
+/* Responsive rules */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
   .hamburger {
     display: flex;
   }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 260px;
-    height: 100vh;
-    background: #2f3e46;
-    display: flex;
-    flex-direction: column;
-    padding: 6rem 2rem;
-    gap: 1.5rem;
-    transition: right 0.35s ease;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  .nav-links a {
-    margin: 0;
-    font-size: 1.2rem;
-  }
 }
+    
     
     /* Sections */
     section { padding: 8rem 0; }
@@ -228,33 +240,41 @@
 </head>
 <body>
 
-  <nav>
-    <div class="nav-container container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="assets/images/dbm-logo.png"
-               alt="Deaf Biblical Ministry logo">
-        </a>
-      </div>
-
-      <button class="hamburger"
-              aria-label="Open menu"
-              aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#impact">Impact</a>
-        <a href="#programs">Programs</a>
-        <a href="#support">Support Us</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
+<nav>
+  <div class="nav-container container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/images/dbm-logo.png" alt="Deaf Biblical Ministry logo">
+      </a>
     </div>
-  </nav>
+
+    <!-- Desktop links -->
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#impact">Impact</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#support">Support Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button class="hamburger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile slide menu -->
+  <div class="mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="index.html#impact">Impact</a>
+    <a href="index.html#programs">Programs</a>
+    <a href="index.html#support">Support Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
 
   <header class="hero">
     <div class="hero-content">
@@ -342,27 +362,26 @@
   </footer>
 
   <script>
-    // Simple scroll effect for navbar
-    window.addEventListener('scroll', () => {
-      document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 100);
+  // Scroll effect for navbar
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav')
+      .classList.toggle('scrolled', window.scrollY > 100);
+  });
 
-    const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  // Mobile hamburger menu
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
 
   hamburger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.classList.toggle('open');
   });
 
-  // Close menu when a link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
+  mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.classList.remove('open');
     });
   });
-      
-    });
-  </script>
+</script>
+  
 </body>
 </html>
