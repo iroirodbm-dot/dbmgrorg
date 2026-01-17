@@ -63,6 +63,12 @@
   transition: all 0.3s ease;
 }
 
+/* Ensure hamburger is always above mobile menu */
+.hamburger {
+  position: relative;
+  z-index: 1001;
+}
+
 /* Mobile menu panel */
 .mobile-menu {
   position: fixed;
@@ -76,7 +82,7 @@
   flex-direction: column;
   gap: 1.8rem;
   transition: right 0.35s ease;
-  z-index: 999;
+  z-index: 1000; /* LOWER than hamburger */
 }
 
 .mobile-menu a {
