@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us • Deaf Biblical Ministry</title>
+
+  <!-- Fonts (same as home page) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #4a6fa5;
+      --accent: #d4a373;
+      --dark: #2d2d2d;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navbar (same styling as home) */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #2f3e46;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+    }
+
+    .logo img {
+      height: 42px;
+      display: block;
+    }
+
+    .nav-links a {
+      margin-left: 2.5rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Page Header */
+    .page-header {
+      padding-top: 140px;
+      padding-bottom: 4rem;
+      text-align: center;
+      background: white;
+    }
+
+    .page-header h1 {
+      font-size: 3.2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1.3rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Contact Grid */
+    .contact-section {
+      padding: 5rem 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      text-decoration: none;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      color: var(--primary);
+    }
+
+    .contact-card p,
+    .contact-card a {
+      font-size: 1.05rem;
+      color: var(--gray);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1.2rem;
+      object-fit: contain;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-card a:hover .contact-icon {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+       
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/dbm-logo.png" alt="Deaf Biblical Ministry logo">
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#impact">Impact</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#support">Support Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>
+        We welcome conversations, partnerships, and support.  
+        Reach out through any of the channels below.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Options -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+  <!-- Address -->
+  <a href="https://maps.app.goo.gl/nQAhijrueq3FcCjbA" class="contact-card">
+    <img src="assets/images/icon-address.png" alt="Address" class="contact-icon"/>
+    <h3>Address</h3>
+    <p>
+      Ward 10, Lane 3, Naharbari<br>
+      Dimapur - 797116, Nagaland, India
+    </p>
+  </a>
+
+  <!-- Email -->
+  <a href="mailto:hello@dbm.org.in" class="contact-card">
+    <img src="assets/images/icon-email.png" alt="Email" class="contact-icon"/>
+    <h3>Email</h3>
+    <p>hello@dbm.org.in</p>
+  </a>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/916909150432" target="_blank" class="contact-card" aria-label="WhatsApp">
+    <img src="assets/images/icon-whatsapp.png" alt="WhatsApp" class="contact-icon"/>
+    <h3>WhatsApp</h3>
+    <p>Message us directly</p>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://facebook.com/p/Deaf-Biblical-Ministry-100064918891282/"
+     target="_blank" class="contact-card" aria-label="Facebook">
+    <img src="assets/images/icon-facebook.png" alt="Facebook" class="contact-icon"/>
+    <h3>Facebook</h3>
+    <p>Follow our latest updates</p>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com/" target="_blank"
+     class="contact-card" aria-label="Instagram">
+    <img src="assets/images/icon-instagram.png" alt="Instagram" class="contact-icon"/>
+    <h3>Instagram</h3>
+    <p>Stories & Outreach</p>
+  </a>
+
+  <!-- YouTube -->
+  <a href="https://youtube.com/@deafbiblicalministrydbm3242"
+     target="_blank" class="contact-card" aria-label="YouTube">
+    <img src="assets/images/icon-youtube.png" alt="YouTube" class="contact-icon"/>
+    <h3>YouTube</h3>
+    <p>Watch our videos</p>
+  </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Deaf Biblical Ministry • Dimapur, Nagaland • hello@dbm.org.in</p>
+      <p style="margin-top:1.5rem; font-size:0.95rem; opacity:0.8;">
+        © 2026 Deaf Biblical Ministry. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
