@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="assets/css/nav.css">
   <style>
     :root {
       --primary: #4a6fa5;
@@ -39,101 +39,8 @@
       padding: 0 2rem;
     }
 
-    /* Navbar (same styling as home) */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: #2f3e46;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 2rem;
-    }
-
-    .logo img {
-      height: 42px;
-      display: block;
-    }
-
-    .nav-links a {
-      margin-left: 2.5rem;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    /* Hamburger button */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 26px;
-  height: 2px;
-  background: #ffffff;
-  transition: all 0.3s ease;
-}
-
-/* Mobile menu panel */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 280px;
-  height: 100vh;
-  background: #2f3e46;
-  padding: 6rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
-  transition: right 0.35s ease;
-  z-index: 999;
-}
-
-.mobile-menu a {
-  color: white;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-
-.mobile-menu a:hover {
-  color: var(--accent);
-}
-
-/* Active state */
-.mobile-menu.open {
-  right: 0;
-}
-
-/* Responsive rules */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
-  
-
-    /* Page Header */
+   /* Page Header */
     .page-header {
       padding-top: 140px;
       padding-bottom: 4rem;
@@ -240,7 +147,7 @@
 
 <body>
 
-  <!-- Navbar -->
+  <!-- Shared Navbar -->
   <nav>
   <div class="nav-container container">
     <div class="logo">
@@ -249,7 +156,6 @@
       </a>
     </div>
 
-    <!-- Desktop links -->
     <div class="nav-links">
       <a href="index.html#about">About</a>
       <a href="index.html#impact">Impact</a>
@@ -258,7 +164,6 @@
       <a href="contact.html">Contact</a>
     </div>
 
-    <!-- Hamburger -->
     <button class="hamburger" aria-label="Open menu">
       <span></span>
       <span></span>
@@ -266,7 +171,6 @@
     </button>
   </div>
 
-  <!-- Mobile slide menu -->
   <div class="mobile-menu">
     <a href="index.html#about">About</a>
     <a href="index.html#impact">Impact</a>
@@ -276,6 +180,7 @@
   </div>
 </nav>
 
+  
   <!-- Header -->
   <section class="page-header">
     <div class="container">
@@ -354,28 +259,7 @@
     </div>
   </footer>
 
-  <script>
-  // Scroll effect for navbar
-  window.addEventListener('scroll', () => {
-    document.querySelector('nav')
-      .classList.toggle('scrolled', window.scrollY > 100);
-  });
-
-  // Mobile hamburger menu
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-  });
-
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-    });
-  });
-</script>
-
+  <script src="assets/js/nav.js" defer></script>
   
 </body>
 </html>
