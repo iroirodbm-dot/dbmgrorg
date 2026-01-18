@@ -118,8 +118,14 @@
       opacity: 0.9;
     }
 
-       
-    /* Footer */
+    .sign-icon {
+      width: 22px;
+      vertical-align: middle;
+      margin-left: 0.5rem;
+      opacity: 0.8;
+    }
+ 
+     /* Footer */
     footer {
       background: var(--dark);
       color: white;
@@ -142,6 +148,91 @@
         font-size: 2.6rem;
       }
     }
+
+    /* Contact Form */
+.contact-form-section {
+  padding: 5rem 0 6rem;
+  background: white;
+}
+
+.form-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-wrapper h2 {
+  font-size: 2.6rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.form-wrapper p {
+  color: var(--gray);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.contact-form button {
+  margin-top: 1rem;
+  align-self: center;
+  padding: 0.9rem 2.8rem;
+  background: var(--accent);
+  color: var(--dark);
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(212,163,115,0.25);
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(212,163,115,0.35);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-wrapper h2 {
+    font-size: 2.2rem;
+  }
+}
+
+    
   </style>
 </head>
 
@@ -185,6 +276,9 @@
   <section class="page-header">
     <div class="container">
       <h1>Get in Touch</h1>
+      <h2>
+        <img src="assets/images/contact-connect.png" alt="Sign language accessible" class="sign-icon">
+      </h2>
       <p>
         We welcome conversations, partnerships, and support.  
         Reach out through any of the channels below.
@@ -192,6 +286,32 @@
     </div>
   </section>
 
+  <!-- Contact Form -->
+<section class="contact-form-section">
+  <div class="container">
+    <div class="form-wrapper">
+      <h2>Contact Us</h2>
+      <p>
+        Have a question or would like to connect with us?
+        Send us a message and we will respond as soon as possible.
+      </p>
+
+      <form action="#" method="post" class="contact-form">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <input type="text" name="subject" placeholder="Subject">
+
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+  
   <!-- Contact Options -->
   <section class="contact-section">
     <div class="container">
