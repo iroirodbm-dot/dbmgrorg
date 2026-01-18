@@ -404,9 +404,15 @@
     const params = new URLSearchParams(window.location.search);
 
     if (params.get('success') === 'true') {
-      const successMsg = document.getElementById('form-success');
-      if (successMsg) {
-        successMsg.style.display = 'block';
+      const y = sessionStorage.getItem('scrollY');
+      if (y !== null) {
+        window.scrollTo(0, parseInt(y, 10));
+        sessionStorage.removeItem('scrollY');
+      }
+
+      const msg = document.getElementById('form-success');
+      if (msg) {
+        msg.style.display = 'block';
       }
 
       history.replaceState(null, '', window.location.pathname);
@@ -414,6 +420,11 @@
     })();
   </script>
 
+  <script>
+  document.querySelector('.contact-form').addEventListener('submit', () => {
+    sessionStorage.setItem('scrollY', window.scrollY);
+  });
+  </script>
    
 </body>
 </html>
