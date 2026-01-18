@@ -352,7 +352,14 @@
         Send us a message and we will respond as soon as possible.
       </p>
 
-      <form action="https://formspree.io/f/mwvvlqoq" method="POST" class="contact-form">
+      <form action="https://formsubmit.co/website.contact.form@dbm.org.in" method="POST" class="contact-form">
+        <input type="hidden" name="_subject" value="New Contact Form Submission – DBM">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_autoresponse" value="Thank you for contacting Deaf Biblical Ministry. We will respond shortly.">
+        <input type="hidden" name="_next" value="contact.html?success=true">
+        
+      <!-- fields -->
         <div class="form-row">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
@@ -365,9 +372,14 @@
         <button type="submit">Send Message</button>
       </form>
 
-      <p id="form-status" style="margin-top:1.5rem; color:var(--primary); display:none;">
-        Thank you. Your message has been sent.
+      <p id="form-success" style="display:none; margin-top:1.5rem; color:var(--primary);">
+        Thank you for contacting Deaf Biblical Ministry. We will respond shortly.
       </p>
+      <p id="form-error" style="display:none; margin-top:1.5rem; color:#b00020;">
+        Something went wrong. Please try again later.
+      </p>
+
+      
       
     </div>
   </div>
@@ -385,37 +397,6 @@
 
   <script src="assets/js/nav.js" defer></script>
 
-  <script>
-  const form = document.querySelector('.contact-form');
-  const status = document.getElementById('form-status');
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    try {
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        form.reset();
-        status.style.display = 'block';
-      } else {
-        status.textContent = 'Something went wrong. Please try again.';
-        status.style.display = 'block';
-      }
-    } catch (error) {
-      status.textContent = 'Network error. Please try again later.';
-      status.style.display = 'block';
-    }
-  });
-</script>
-
-  
+   
 </body>
 </html>
