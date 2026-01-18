@@ -76,13 +76,17 @@
   right: -100%;
   width: 280px;
   height: 100vh;
-  background: #2f3e46;
+
+  background: rgba(47, 62, 70, 0.88); /* subtle translucency */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
   padding: 6rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
   transition: right 0.35s ease;
-  z-index: 1000; /* LOWER than hamburger */
+  z-index: 1000;
 }
 
 .mobile-menu a {
