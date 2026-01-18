@@ -26,3 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+  document.addEventListener('click', (event) => {
+    if (!mobileMenu.classList.contains('open')) return;
+
+    const isClickInsideMenu = mobileMenu.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnHamburger) {
+      mobileMenu.classList.remove('open');
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      mobileMenu.classList.remove('open');
+    }
+  });
+
+});
