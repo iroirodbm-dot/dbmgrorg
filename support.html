@@ -1,336 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Support Us • Deaf Biblical Ministry</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Programs • Deaf Biblical Ministry</title>
 
-  <!-- Fonts (same as other pages) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-
-  <!-- Shared Nav Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/nav.css">
 
   <style>
-    :root {
-      --primary: #4a6fa5;
-      --accent: #d4a373;
-      --dark: #2d2d2d;
-      --light: #f8f9fa;
-      --gray: #6c757d;
+    :root{
+      --primary:#4a6fa5;
+      --accent:#d4a373;
+      --dark:#2d2d2d;
+      --light:#f8f9fa;
+      --gray:#6c757d;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--light);
+      color:var(--dark);
+      line-height:1.65;
+      padding-top:90px;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.7;
+    h1,h2,h3{
+      font-family:'Playfair Display',serif;
+      color:var(--primary);
     }
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
+    h2{
+      font-size:2.8rem;
+      text-align:center;
+      margin-bottom:3.5rem;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
+    p{
+      color:var(--gray);
     }
 
-    /* Page Header */
-    .page-header {
-      padding-top: 140px;
-      padding-bottom: 4.5rem;
-      background: white;
-      text-align: center;
+    .container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 2rem;
     }
 
-    .page-header h1 {
-      font-size: 3.2rem;
-      color: var(--primary);
-      margin-bottom: 1.2rem;
+    /* Hero */
+    .programs-hero{
+      background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55));
+      min-height:420px;
+      display:flex;
+      align-items:center;
+      text-align:center;
+      color:white;
     }
 
-    .page-header p {
-      font-size: 1.25rem;
-      color: var(--gray);
-      max-width: 720px;
-      margin: 0 auto;
+    .programs-hero h1{
+      font-size:3.4rem;
+      margin-bottom:1rem;
+      color:white;
     }
 
-    /* Support Intro */
-    .support-intro {
-      padding: 5rem 0;
-      background: var(--light);
-      text-align: center;
+    .programs-hero p{
+      max-width:820px;
+      margin:0 auto;
+      font-size:1.25rem;
+      opacity:.95;
+      color:white;
     }
 
-    .support-intro h2 {
-      font-size: 2.8rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
+    section{
+      padding:6.5rem 0;
     }
 
-    .support-intro p {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 1.15rem;
-      color: var(--gray);
+    /* Program blocks */
+    .program{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3.5rem;
+      align-items:start;
+      margin-bottom:6rem;
     }
 
-    /* Support Options */
-    .support-options {
-      padding: 5rem 0 6rem;
-      background: white;
+    .program:last-child{
+      margin-bottom:0;
     }
 
-    .options-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.5rem;
+    .program-content h3{
+      font-size:2rem;
+      margin-bottom:1.2rem;
     }
 
-    .option-card {
-      background: white;
-      border-radius: 16px;
-      padding: 2.8rem 2.4rem;
-      text-align: center;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
+    .program-content ul{
+      margin-top:1.2rem;
+      padding-left:1.2rem;
     }
 
-    .option-card:hover {
-      transform: translateY(-8px);
+    .program-content li{
+      margin-bottom:.6rem;
     }
 
-    .option-card h3 {
-      font-size: 1.7rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
+    /* Carousel */
+    .carousel{
+      position:relative;
+      width:100%;
+      max-width:460px;
+      margin:0 auto;
     }
 
-    .option-card p {
-      color: var(--gray);
-      font-size: 1.05rem;
+    .carousel-viewport{
+      width:100%;
+      height:240px;
+      overflow:hidden;
+      border-radius:16px;
+      background:#e9ecef;
     }
 
-    /* Donation Section */
-    .donation-section {
-      padding: 6rem 0;
-      background: var(--primary);
-      color: white;
-      text-align: center;
+    .carousel-track{
+      display:flex;
+      height:100%;
+      transition:transform .45s ease;
     }
 
-    .donation-section h2 {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
+    .carousel-track img,
+    .carousel-track video{
+      width:100%;
+      height:100%;
+      flex-shrink:0;
+      object-fit:cover;
+      user-select:none;
+      pointer-events:none;
     }
 
-    .donation-section p {
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      font-size: 1.25rem;
-      opacity: 0.95;
+    .carousel-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,.45);
+      color:#fff;
+      border:none;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      cursor:pointer;
+      z-index:2;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 1rem 2.8rem;
-      background: white;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    .carousel-btn.prev{left:-18px}
+    .carousel-btn.next{right:-18px}
+
+    .carousel-btn:hover{
+      background:rgba(0,0,0,.65);
     }
 
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 40px rgba(0,0,0,0.25);
-    }
-
-    /* Transparency */
-    .transparency {
-      padding: 5rem 0;
-      background: var(--light);
-      text-align: center;
-    }
-
-    .transparency h2 {
-      font-size: 2.6rem;
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-    }
-
-    .transparency p {
-      max-width: 720px;
-      margin: 0 auto;
-      color: var(--gray);
-      font-size: 1.1rem;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 4rem 0 2rem;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
-
-    @media (max-width: 768px) {
-      .page-header h1 {
-        font-size: 2.6rem;
+    /* Responsive */
+    @media(max-width:1000px){
+      .program{
+        grid-template-columns:1fr;
+        text-align:center;
       }
-
-      .donation-section h2 {
-        font-size: 2.4rem;
+      .program-content ul{
+        text-align:left;
+        display:inline-block;
       }
+    }
+
+    @media(max-width:600px){
+      h2{font-size:2.3rem}
+      .programs-hero h1{font-size:2.4rem}
+      .carousel-viewport{height:190px}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Shared Navbar -->
-  <nav>
-    <div class="nav-container container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="assets/images/dbm-logo.png" alt="Deaf Biblical Ministry logo">
-        </a>
-      </div>
-
-      <div class="nav-links">
-        <a href="index.html#about">About</a>
-        <a href="index.html#impact">Impact</a>
-        <a href="index.html#programs">Programs</a>
-        <a href="support.html">Support Us</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
-      <button class="hamburger" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+<nav>
+  <div class="nav-container container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/images/dbm-logo.png" alt="Deaf Biblical Ministry logo">
+      </a>
     </div>
 
-    <div class="mobile-menu">
+    <div class="nav-links">
       <a href="index.html#about">About</a>
-      <a href="index.html#impact">Impact</a>
-      <a href="index.html#programs">Programs</a>
+      <a href="impact.html">Impact</a>
+      <a href="programs.html">Programs</a>
       <a href="support.html">Support Us</a>
       <a href="contact.html">Contact</a>
     </div>
-  </nav>
 
-  <!-- Header -->
-  <section class="page-header">
-    <div class="container">
-      <h1>Support Our Mission</h1>
-      <p>
-        Your partnership enables education, dignity, and opportunity
-        for Deaf children and adults across Northeast India.
-      </p>
-    </div>
-  </section>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 
-  <!-- Intro -->
-  <section class="support-intro">
-    <div class="container">
-      <h2>Why Your Support Matters</h2>
-      <p>
-        Deaf Biblical Ministry exists to serve with compassion, accountability,
-        and long-term vision. Every contribution directly strengthens education,
-        vocational training, interpretation services, and community empowerment.
-      </p>
-    </div>
-  </section>
+  <div class="mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="impact.html">Impact</a>
+    <a href="programs.html">Programs</a>
+    <a href="support.html">Support Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
-  <!-- Ways to Support -->
-  <section class="support-options">
-    <div class="container">
-      <div class="options-grid">
+<header class="programs-hero">
+  <div class="container">
+    <h1>Our Programs</h1>
+    <p>Holistic education, skill development, and community support designed to empower Deaf individuals toward dignity, independence, and inclusion.</p>
+  </div>
+</header>
 
-        <div class="option-card">
-          <h3>Financial Giving</h3>
-          <p>
-            Support our educational and vocational programs through one-time
-            or recurring financial contributions.
-          </p>
+<section>
+  <div class="container">
+
+    <h2>What We Do</h2>
+
+    <!-- Education -->
+    <div class="program">
+      <div class="carousel">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <img src="assets/images/placeholder.png" alt="">
+            <img src="assets/images/placeholder.png" alt="">
+            <img src="assets/images/placeholder.png" alt="">
+          </div>
         </div>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
 
-        <div class="option-card">
-          <h3>Prayer & Advocacy</h3>
-          <p>
-            Stand with us in prayer and help raise awareness
-            about Deaf inclusion and accessibility.
-          </p>
-        </div>
-
-        <div class="option-card">
-          <h3>Partnerships</h3>
-          <p>
-            Churches, organizations, and individuals are welcome
-            to collaborate in sustainable, mission-aligned ways.
-          </p>
-        </div>
-
+      <div class="program-content">
+        <h3>Education for the Deaf</h3>
+        <p>
+          DBM runs a residential School for the Deaf in Dimapur, providing free education and accommodation
+          to Deaf children from underserved backgrounds.
+        </p>
+        <ul>
+          <li>Nursery to Class X education</li>
+          <li>Online Classes for Classes XI & XII</li>
+          <li>Workshops, seminars, and awareness programs</li>
+          <li>Specialized training for teachers of the Deaf</li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- Donation CTA -->
-  <section class="donation-section">
-    <div class="container">
-      <h2>Make a Difference Today</h2>
-      <p>
-        For donation details, bank information, or official documentation,
-        please contact us directly. We value transparency and accountability.
-      </p>
-      <a href="contact.html" class="btn">Contact for Giving Details</a>
+    <!-- Vocational -->
+    <div class="program">
+      <div class="carousel">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <img src="assets/images/placeholder.png" alt="">
+            <img src="assets/images/placeholder.png" alt="">
+            <img src="assets/images/placeholder.png" alt="">
+          </div>
+        </div>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+
+      <div class="program-content">
+        <h3>Vocational Training & Placement</h3>
+        <p>
+          DBM focuses on rehabilitation through self-reliance, equipping Deaf adults with
+          employable skills and supporting long-term livelihoods.
+        </p>
+        <ul>
+          <li>Crafts, tailoring, carpentry, bamboo & furniture making</li>
+          <li>Beauty care, food processing, screen printing</li>
+          <li>Computer literacy, typing, farming initiatives</li>
+          <li>Employment facilitation and placement support</li>
+        </ul>
+      </div>
     </div>
-  </section>
 
-  <!-- Transparency -->
-  <section class="transparency">
-    <div class="container">
-      <h2>Transparency & Trust</h2>
-      <p>
-        Deaf Biblical Ministry is a registered organization.
-        Financial stewardship and ethical governance are core to our mission.
-        Documentation and reports are available upon request.
-      </p>
+    <!-- Community -->
+    <div class="program">
+      <div class="carousel">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <img src="assets/images/placeholder.png" alt="">
+            <img src="assets/images/placeholder.png" alt="">
+            <img src="assets/images/placeholder.png" alt="">
+          </div>
+        </div>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+
+      <div class="program-content">
+        <h3>Special Initiatives & Community Outreach</h3>
+        <p>
+          DBM serves as a central support system for Deaf participation, accessibility,
+          and inclusion across society.
+        </p>
+        <ul>
+          <li>Professional sign-language interpretation services</li>
+          <li>Health care and annual medical support</li>
+          <li>Sign-language training for institutions and businesses</li>
+          <li>Counseling, marriage support, and social services</li>
+        </ul>
+      </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>
-        © 2026 Deaf Biblical Ministry • Dimapur, Nagaland • hello@dbm.org.in
-      </p>
-    </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="assets/js/nav.js" defer></script>
+<script src="assets/js/nav.js" defer></script>
+
+<script>
+document.querySelectorAll('.carousel').forEach(carousel=>{
+  const track=carousel.querySelector('.carousel-track');
+  const slides=track.children;
+  const prev=carousel.querySelector('.prev');
+  const next=carousel.querySelector('.next');
+  let index=0,paused=false,startX=0;
+
+  function update(){track.style.transform=`translateX(-${index*100}%)`}
+  function nextSlide(){index=(index+1)%slides.length;update()}
+  function prevSlide(){index=(index-1+slides.length)%slides.length;update()}
+
+  prev.onclick=prevSlide;
+  next.onclick=nextSlide;
+
+  carousel.onmouseenter=()=>paused=true;
+  carousel.onmouseleave=()=>paused=false;
+
+  carousel.addEventListener('touchstart',e=>{
+    startX=e.touches[0].clientX;paused=true;
+  },{passive:true});
+
+  carousel.addEventListener('touchend',e=>{
+    const diff=e.changedTouches[0].clientX-startX;
+    if(Math.abs(diff)>40) diff<0?nextSlide():prevSlide();
+    paused=false;
+  });
+
+  setInterval(()=>{if(!paused)nextSlide()},3000);
+});
+</script>
+
 </body>
 </html>
