@@ -271,33 +271,30 @@
 <script src="assets/js/nav.js" defer></script>
 
 <script>
-document.querySelectorAll('.media-gallery.auto-scroll').forEach(gallery => {
-  let scrollSpeed = 0.35;
-  let isPaused = false;
+window.addEventListener('load', () => {
+  document.querySelectorAll('.media-gallery.auto-scroll').forEach(gallery => {
+    let scrollSpeed = 0.5;
+    let isPaused = false;
 
-  gallery.addEventListener('mouseenter', () => isPaused = true);
-  gallery.addEventListener('mouseleave', () => isPaused = false);
-  gallery.addEventListener('touchstart', () => isPaused = true);
-  gallery.addEventListener('touchend', () => isPaused = false);
+    gallery.addEventListener('mouseenter', () => isPaused = true);
+    gallery.addEventListener('mouseleave', () => isPaused = false);
+    gallery.addEventListener('touchstart', () => isPaused = true);
+    gallery.addEventListener('touchend', () => isPaused = false);
 
-  function autoScroll(){
-    if (!isPaused) {
+    setInterval(() => {
+      if (isPaused) return;
+
+      if (gallery.scrollWidth <= gallery.clientWidth) return;
+
       gallery.scrollLeft += scrollSpeed;
 
-      if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2) {
+      if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 1) {
         gallery.scrollLeft = 0;
       }
-    }
-    requestAnimationFrame(autoScroll);
-  }
-
-  if (gallery.scrollWidth > gallery.clientWidth) {
-    autoScroll();
-  }
+    }, 16); // ~60fps
+  });
 });
 </script>
-
-
   
 </body>
 </html>
