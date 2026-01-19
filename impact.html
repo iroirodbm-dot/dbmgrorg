@@ -112,6 +112,64 @@
       .two-col{grid-template-columns:1fr}
       .impact-hero h1{font-size:2.4rem}
     }
+
+    /* Horizontal media gallery */
+.media-gallery{
+  display:flex;
+  gap:1rem;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:0.5rem;
+  -webkit-overflow-scrolling:touch;
+}
+
+.media-gallery::-webkit-scrollbar{
+  height:6px;
+}
+
+.media-gallery::-webkit-scrollbar-thumb{
+  background:rgba(0,0,0,0.2);
+  border-radius:10px;
+}
+
+.media-item{
+  flex:0 0 auto;
+  width:240px;
+  height:160px;
+  scroll-snap-align:start;
+  border-radius:12px;
+  background:#e9ecef;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.media-item img,
+.media-item video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Graceful empty state */
+.media-item img[src=""],
+.media-item video source[src=""]{
+  display:none;
+}
+
+  /* Auto-scroll hint */
+.media-gallery.auto-scroll{
+  scroll-behavior:smooth;
+  cursor:grab;
+}
+
+.media-gallery.auto-scroll:active{
+  cursor:grabbing;
+}
+
+    
   </style>
 </head>
 
@@ -172,7 +230,32 @@
     <h2>Impact Highlights</h2>
     <div class="two-col">
       <div class="card">
-        <div class="placeholder"></div>
+        <div class="media-gallery auto-scroll" aria-label="Impact gallery">
+        <!-- image gallery -->
+         <div class="media-item">
+            <img src="assets/images/awards/a.png" alt="a" loading="lazy">
+        </div>
+
+          <div class="media-item">
+            <img src="assets/images/awards/b.png" alt="b" loading="lazy">
+        </div>
+
+          <div class="media-item">
+            <img src="assets/images/awards/c.png" alt="c" loading="lazy">
+        </div>
+
+          <div class="media-item">
+            <img src="assets/images/awards/d.png" alt="d" loading="lazy">
+        </div>
+
+          <div class="media-item">
+            <img src="assets/images/awards/e.png" alt="e" loading="lazy">
+        </div>
+
+          <div class="media-item">
+            <img src="assets/images/awards/f.png" alt="f" loading="lazy">
+        </div>
+        
         <h3>National Award Recipients</h3>
         <p>DBM alumni and staff have received multiple state and national recognitions.</p>
       </div>
@@ -186,5 +269,35 @@
 </section>
 
 <script src="assets/js/nav.js" defer></script>
+
+<script>
+document.querySelectorAll('.media-gallery.auto-scroll').forEach(gallery => {
+  let scrollSpeed = 0.35;
+  let isPaused = false;
+
+  gallery.addEventListener('mouseenter', () => isPaused = true);
+  gallery.addEventListener('mouseleave', () => isPaused = false);
+  gallery.addEventListener('touchstart', () => isPaused = true);
+  gallery.addEventListener('touchend', () => isPaused = false);
+
+  function autoScroll(){
+    if (!isPaused) {
+      gallery.scrollLeft += scrollSpeed;
+
+      if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 2) {
+        gallery.scrollLeft = 0;
+      }
+    }
+    requestAnimationFrame(autoScroll);
+  }
+
+  if (gallery.scrollWidth > gallery.clientWidth) {
+    autoScroll();
+  }
+});
+</script>
+
+
+  
 </body>
 </html>
