@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="assets/css/nav.css">
 
   <style>
@@ -27,7 +26,7 @@
       background:var(--light);
       color:var(--dark);
       line-height:1.65;
-      padding-top:90px; /* FIX for fixed navbar */
+      padding-top:90px;
     }
 
     h1,h2,h3{
@@ -84,7 +83,7 @@
     .stat .big{
       font-size:2.4rem;
       font-weight:700;
-      margin:0.6rem 0;
+      margin:.6rem 0;
     }
 
     .two-col{
@@ -100,12 +99,56 @@
       box-shadow:0 10px 30px rgba(0,0,0,.06);
     }
 
-    .placeholder{
+    /* Carousel */
+    .carousel{
+      position:relative;
+      width:100%;
+      max-width:260px;
+      margin-bottom:1.2rem;
+    }
+
+    .carousel-viewport{
       width:100%;
       height:160px;
+      overflow:hidden;
+      border-radius:12px;
       background:#e9ecef;
-      border-radius:10px;
-      margin-bottom:1rem;
+    }
+
+    .carousel-track{
+      display:flex;
+      height:100%;
+      transition:transform .45s ease;
+    }
+
+    .carousel-track img{
+      width:100%;
+      height:100%;
+      flex-shrink:0;
+      object-fit:cover;
+      user-select:none;
+      pointer-events:none;
+    }
+
+    .carousel-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,.45);
+      color:#fff;
+      border:none;
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      cursor:pointer;
+      z-index:2;
+    }
+
+    .carousel-btn.prev{left:-12px}
+    .carousel-btn.next{right:-12px}
+
+    .carousel-btn:hover{
+      background:rgba(0,0,0,.65);
     }
 
     @media(max-width:900px){
@@ -113,69 +156,14 @@
       .impact-hero h1{font-size:2.4rem}
     }
 
-    /* Horizontal media gallery */
-.media-gallery{
-  display:flex;
-  gap:1rem;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding-bottom:0.5rem;
-  -webkit-overflow-scrolling:touch;
-}
-
-.media-gallery::-webkit-scrollbar{
-  height:6px;
-}
-
-.media-gallery::-webkit-scrollbar-thumb{
-  background:rgba(0,0,0,0.2);
-  border-radius:10px;
-}
-
-.media-item{
-  flex:0 0 auto;
-  width:240px;
-  height:160px;
-  scroll-snap-align:start;
-  border-radius:12px;
-  background:#e9ecef;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.media-item img,
-.media-item video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* Graceful empty state */
-.media-item img[src=""],
-.media-item video source[src=""]{
-  display:none;
-}
-
-  /* Auto-scroll hint */
-.media-gallery.auto-scroll{
-  scroll-behavior:smooth;
-  cursor:grab;
-}
-
-.media-gallery.auto-scroll:active{
-  cursor:grabbing;
-}
-
-    
+    @media(max-width:480px){
+      .carousel{max-width:100%}
+    }
   </style>
 </head>
 
 <body>
 
-<!-- Shared Navbar -->
 <nav>
   <div class="nav-container container">
     <div class="logo">
@@ -228,42 +216,37 @@
 <section>
   <div class="container">
     <h2>Impact Highlights</h2>
+
     <div class="two-col">
+
       <div class="card">
-        <div class="media-gallery auto-scroll" aria-label="Impact gallery">
-        <!-- image gallery -->
-         <div class="media-item">
-            <img src="assets/images/awards/a.png" alt="a" loading="lazy">
+        <div class="carousel">
+          <button class="carousel-btn prev">&#10094;</button>
+
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <img src="assets/images/awards/a.png" alt="">
+              <img src="assets/images/awards/b.png" alt="">
+              <img src="assets/images/awards/c.png" alt="">
+              <img src="assets/images/awards/d.png" alt="">
+              <img src="assets/images/awards/e.png" alt="">
+              <img src="assets/images/awards/f.png" alt="">
+            </div>
+          </div>
+
+          <button class="carousel-btn next">&#10095;</button>
         </div>
 
-          <div class="media-item">
-            <img src="assets/images/awards/b.png" alt="b" loading="lazy">
-        </div>
-
-          <div class="media-item">
-            <img src="assets/images/awards/c.png" alt="c" loading="lazy">
-        </div>
-
-          <div class="media-item">
-            <img src="assets/images/awards/d.png" alt="d" loading="lazy">
-        </div>
-
-          <div class="media-item">
-            <img src="assets/images/awards/e.png" alt="e" loading="lazy">
-        </div>
-
-          <div class="media-item">
-            <img src="assets/images/awards/f.png" alt="f" loading="lazy">
-        </div>
-        
         <h3>National Award Recipients</h3>
         <p>DBM alumni and staff have received multiple state and national recognitions.</p>
       </div>
+
       <div class="card">
-        <div class="placeholder"></div>
+        <div style="height:160px;background:#e9ecef;border-radius:12px;margin-bottom:1rem;"></div>
         <h3>Firsts in Nagaland</h3>
         <p>Milestones in education, policing, arts, and public life by Deaf alumni.</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -271,30 +254,55 @@
 <script src="assets/js/nav.js" defer></script>
 
 <script>
-window.addEventListener('load', () => {
-  document.querySelectorAll('.media-gallery.auto-scroll').forEach(gallery => {
-    let scrollSpeed = 0.5;
-    let isPaused = false;
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const slides = track.children;
+  const prev = carousel.querySelector('.prev');
+  const next = carousel.querySelector('.next');
 
-    gallery.addEventListener('mouseenter', () => isPaused = true);
-    gallery.addEventListener('mouseleave', () => isPaused = false);
-    gallery.addEventListener('touchstart', () => isPaused = true);
-    gallery.addEventListener('touchend', () => isPaused = false);
+  let index = 0;
+  let paused = false;
+  let startX = 0;
+  let autoTimer;
 
-    setInterval(() => {
-      if (isPaused) return;
+  function update(){
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
 
-      if (gallery.scrollWidth <= gallery.clientWidth) return;
+  function nextSlide(){
+    index = (index + 1) % slides.length;
+    update();
+  }
 
-      gallery.scrollLeft += scrollSpeed;
+  function prevSlide(){
+    index = (index - 1 + slides.length) % slides.length;
+    update();
+  }
 
-      if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 1) {
-        gallery.scrollLeft = 0;
-      }
-    }, 16); // ~60fps
+  prev.addEventListener('click', prevSlide);
+  next.addEventListener('click', nextSlide);
+
+  carousel.addEventListener('mouseenter', () => paused = true);
+  carousel.addEventListener('mouseleave', () => paused = false);
+
+  carousel.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    paused = true;
+  }, {passive:true});
+
+  carousel.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].clientX - startX;
+    if (Math.abs(diff) > 40) {
+      diff < 0 ? nextSlide() : prevSlide();
+    }
+    paused = false;
   });
+
+  autoTimer = setInterval(() => {
+    if (!paused) nextSlide();
+  }, 3000);
 });
 </script>
-  
+
 </body>
 </html>
