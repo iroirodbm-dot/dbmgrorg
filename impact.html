@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Our Impact • Deaf Biblical Ministry</title>
-  <meta name="description" content="Deaf Biblical Ministry (DBM) — transforming lives since 1987. Education, vocational training, advocacy and community outreach for the Deaf in Nagaland. See our impact, awards and annual activity reports." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/nav.css">
 
   <style>
@@ -18,387 +19,172 @@
       --light:#f8f9fa;
       --gray:#6c757d;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
     body{
       font-family:'Inter',sans-serif;
-      color:var(--dark);
       background:var(--light);
+      color:var(--dark);
       line-height:1.65;
+      padding-top:90px; /* FIX for fixed navbar */
     }
-    h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--primary)}
-    .container{max-width:1200px;margin:0 auto;padding:0 2rem}
 
-    /* Header / Nav compatibility */
-    header.site-hero{
-      position:relative;
-      min-height:520px;
-      background:
-        linear-gradient(rgba(0,0,0,0.44), rgba(0,0,0,0.54)),
-        url("assets/images/impact-hero.jpg") center/cover no-repeat;
+    h1,h2,h3{
+      font-family:'Playfair Display',serif;
+      color:var(--primary);
+    }
+
+    .container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 2rem;
+    }
+
+    /* Hero */
+    .impact-hero{
+      background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55));
+      min-height:420px;
       display:flex;
       align-items:center;
-      color:white;
       text-align:center;
+      color:white;
     }
-    .hero-content{margin:0 auto;padding:3rem 1rem;max-width:900px}
-    .hero-content h1{font-size:3.6rem;margin-bottom:0.6rem;letter-spacing:-0.6px}
-    .hero-content p{font-size:1.15rem;margin-bottom:1.6rem;opacity:0.95}
-    .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-    .btn{
-      display:inline-block;padding:0.9rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;
-      background:var(--accent);color:var(--dark);box-shadow:0 10px 30px rgba(212,163,115,0.22);
-      transition:all .25s ease;
+
+    .impact-hero h1{
+      font-size:3.2rem;
+      margin-bottom:1rem;
     }
-    .btn:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(212,163,115,0.3)}
-    /* Sections */
-    section{padding:5.5rem 0}
-    .white-card{background:#fff;border-radius:14px;padding:1.6rem;box-shadow:0 12px 40px rgba(0,0,0,0.06)}
-    /* Stats */
-    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
-    .stat{padding:1.6rem;text-align:center;border-radius:12px;background:linear-gradient(180deg,#fff,#fcfcfc)}
-    .stat h3{font-size:1.6rem;color:var(--primary);margin-bottom:.4rem}
-    .stat p{color:var(--gray);font-weight:600}
-    .stat .big{font-size:2.25rem;color:var(--dark);margin-top:.6rem;font-weight:700}
 
-    /* Highlights */
-    .highlights{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-    .profile{display:flex;gap:1rem;align-items:flex-start}
-    .profile img{width:120px;height:120px;object-fit:cover;border-radius:12px;flex-shrink:0}
-    .profile h4{margin-bottom:.3rem}
-    .profile p{color:var(--gray);font-size:0.98rem}
+    .impact-hero p{
+      max-width:800px;
+      margin:0 auto;
+      font-size:1.2rem;
+      opacity:.95;
+    }
 
-    /* Programs outcomes */
-    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
-    .program-card{padding:1.2rem;border-radius:12px;background:white;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
-    .program-card h4{color:var(--primary);margin-bottom:.4rem}
-    .program-card p{color:var(--gray);font-size:0.95rem}
+    section{
+      padding:5rem 0;
+    }
 
-    /* Awards list */
-    .awards-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-    .award{padding:1rem;background:white;border-radius:10px;color:var(--gray);box-shadow:0 10px 30px rgba(0,0,0,0.04)}
-    .award h4{color:var(--dark);margin-bottom:.35rem}
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1.5rem;
+    }
 
-    /* Reports */
-    .reports{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-    .report{padding:1rem;border-radius:10px;background:white;box-shadow:0 10px 30px rgba(0,0,0,0.04)}
-    .report h4{color:var(--primary);margin-bottom:.4rem}
-    .report ul{color:var(--gray);font-size:.95rem;margin-left:1rem}
+    .stat{
+      background:white;
+      padding:2rem;
+      border-radius:14px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+    }
 
-    /* Partners */
-    .partners{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
-    .partner{background:white;padding:.6rem 1rem;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.04);color:var(--gray);font-weight:600}
+    .stat .big{
+      font-size:2.4rem;
+      font-weight:700;
+      margin:0.6rem 0;
+    }
 
-    /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem}
-    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px;cursor:pointer;display:block}
-    /* modal */
-    .modal{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;visibility:hidden;opacity:0;transition:opacity .2s ease}
-    .modal.open{visibility:visible;opacity:1}
-    .modal img{max-width:92%;max-height:84%;border-radius:8px}
-    .modal .close{position:absolute;top:28px;right:28px;background:rgba(255,255,255,0.12);color:#fff;border-radius:8px;padding:.35rem .6rem;font-weight:700;cursor:pointer}
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:2rem;
+    }
 
-    /* CTA band */
-    .cta-band{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem;border-radius:10px;background:linear-gradient(90deg,#fff,#fcfcfa);box-shadow:0 12px 40px rgba(0,0,0,0.05)}
-    .cta-band p{margin:0;color:var(--dark);font-size:1.05rem;font-weight:600}
+    .card{
+      background:white;
+      padding:1.8rem;
+      border-radius:14px;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+    }
 
-    footer{padding:2.5rem 0;color:var(--gray);background:transparent}
+    .placeholder{
+      width:100%;
+      height:160px;
+      background:#e9ecef;
+      border-radius:10px;
+      margin-bottom:1rem;
+    }
+
     @media(max-width:900px){
-      .highlights{grid-template-columns:1fr}
-      .hero-content h1{font-size:2.4rem}
+      .two-col{grid-template-columns:1fr}
+      .impact-hero h1{font-size:2.4rem}
     }
   </style>
 </head>
+
 <body>
-  <!-- Navigation (keeps same structure as other pages; nav.css will style) -->
-  <nav class="site-nav container" aria-label="Main navigation">
-    <div class="nav-left">
-      <a href="index.html" class="brand" aria-label="Home">
-        <strong style="font-family: 'Playfair Display', serif; color:var(--primary)">DBM</strong>
+
+<!-- Shared Navbar -->
+<nav>
+  <div class="nav-container container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/images/dbm-logo.png" alt="Deaf Biblical Ministry logo">
       </a>
     </div>
-    <div class="nav-right">
-      <a href="index.html">Home</a>
-      <a href="impact.html" aria-current="page">Impact</a>
-      <a href="programs.html">Programs</a>
-      <a href="support.html">Support Us</a>
-      <a href="contact.html" class="contact-link">Contact</a>
+
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="impact.html">Impact</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#support">Support Us</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </nav>
 
-  <!-- Hero -->
-  <header class="site-hero" role="banner">
-    <div class="container hero-content">
-      <h1>Our Impact</h1>
-      <p>Transforming lives since 1987 — quality education, vocational training and community-led advocacy for the Deaf in Nagaland and beyond.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="programs.html">See Our Programs</a>
-        <a class="btn" href="support.html">Support Our Work</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="container" aria-labelledby="impact-stats">
-      <div style="max-width:1000px;margin:0 auto 1rem">
-        <h2 id="impact-stats">At a glance</h2>
-        <p style="color:var(--gray);margin-top:.6rem;max-width:820px">DBM runs the only residential School for the Deaf in Nagaland, provides vocational training and interpretation services, and has trained over 200 Deaf individuals to date. Below are quick facts and highlights from recent years.</p>
-      </div>
-
-      <div class="stats-grid" style="margin-top:1.2rem">
-        <div class="stat white-card">
-          <h3>Established</h3>
-          <div class="big">1987</div>
-          <p>Registered society, Dimapur, Nagaland</p>
-        </div>
-
-        <div class="stat white-card">
-          <h3>Students served</h3>
-          <div class="big">70+</div>
-          <p>Free residential education & medical care (annual)</p>
-        </div>
-
-        <div class="stat white-card">
-          <h3>Vocational trainees</h3>
-          <div class="big">200+</div>
-          <p>Trained & rehabilitated across many trades</p>
-        </div>
-
-        <div class="stat white-card">
-          <h3>Deaf staff employed</h3>
-          <div class="big">3–5</div>
-          <p>Deaf teachers employed in the school (2022–2024)</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="container" aria-labelledby="impact-highlights">
-      <h2 id="impact-highlights">Impact highlights & success stories</h2>
-      <p style="color:var(--gray);max-width:920px;margin-top:.6rem">DBM alumni and students have achieved recognition at state, national and international levels. We celebrate individual journeys that reflect the strength of inclusive education and skills training.</p>
-
-      <div class="highlights" style="margin-top:1.2rem">
-        <div>
-          <article class="profile white-card" aria-labelledby="p-temsutola">
-            <img src="assets/images/temsutola.jpg" alt="Temsutola Jamir">
-            <div>
-              <h4 id="p-temsutola">Mrs. Temsutola Jamir</h4>
-              <p>DBM alumna and National Award recipient for Persons with Disabilities (2022). A leading example of achievement and advocacy for Deaf women in India.</p>
-            </div>
-          </article>
-
-          <article class="profile white-card" aria-labelledby="p-maongkaba" style="margin-top:1rem">
-            <img src="assets/images/maongkaba.jpg" alt="Maongkaba Longkumer">
-            <div>
-              <h4 id="p-maongkaba">Mr. Maongkaba Longkumer</h4>
-              <p>First Deaf constable employed in the Nagaland Armed Police and represented India at the FIFA World Unified Cup (2013).</p>
-            </div>
-          </article>
-        </div>
-
-        <div>
-          <article class="profile white-card" aria-labelledby="p-samlam">
-            <img src="assets/images/samlam.jpg" alt="Samlam Chulio">
-            <div>
-              <h4 id="p-samlam">Ms. Samlam Chulio</h4>
-              <p>1st Runner-Up, Miss Deaf India (2024) — one of many alumni who have excelled in arts and culture.</p>
-            </div>
-          </article>
-
-          <article class="profile white-card" aria-labelledby="p-aomeren" style="margin-top:1rem">
-            <img src="assets/images/aomeren.jpg" alt="Aomeren">
-            <div>
-              <h4 id="p-aomeren">Mr. Aomeren</h4>
-              <p>Recognised as the first Deaf matriculate in Nagaland — a milestone for access to secondary education for Deaf learners in the state.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="container" aria-labelledby="program-outcomes">
-      <h2 id="program-outcomes">Programs & outcomes</h2>
-      <p style="color:var(--gray);max-width:920px;margin-top:.6rem">Our education and vocational programs produce measurable outcomes — education completion, employment, and independent livelihoods. Explore program details on the Programs page.</p>
-
-      <div class="cards-grid" style="margin-top:1.2rem">
-        <div class="program-card">
-          <h4>Education for the Deaf</h4>
-          <p>Residential school providing free education (Nursery–Class X offline; Classes 11–12 online), teacher training and sign-language education in collaboration with SCERT Nagaland.</p>
-          <a class="btn" href="programs.html#education" style="margin-top:.8rem;display:inline-block">Learn more</a>
-        </div>
-
-        <div class="program-card">
-          <h4>Vocational Training</h4>
-          <p>Weaving, tailoring, carpentry, food preservation, beauty care, computer literacy and many more trades; over 200 Deaf trained.</p>
-          <a class="btn" href="programs.html#vocational" style="margin-top:.8rem;display:inline-block">See programs</a>
-        </div>
-
-        <div class="program-card">
-          <h4>Interpretation & Outreach</h4>
-          <p>Interpretation services for hospitals, police, courts and media, sign-language workshops and community awareness programs.</p>
-          <a class="btn" href="programs.html#outreach" style="margin-top:.8rem;display:inline-block">Community work</a>
-        </div>
-
-        <div class="program-card">
-          <h4>Certificate & Training Courses</h4>
-          <p>Certificate Course on Sign Language (with SCERT) and FE-SEDE Foundation Course on Special Education in collaboration with SSA and RCI partners.</p>
-          <a class="btn" href="programs.html#courses" style="margin-top:.8rem;display:inline-block">Course info</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="container" aria-labelledby="awards">
-      <h2 id="awards">Awards & recognition</h2>
-      <p style="color:var(--gray);max-width:920px;margin-top:.6rem">National and state awards recognise DBM's long-term contribution to the welfare of the Deaf.</p>
-
-      <div class="awards-list" style="margin-top:1.2rem">
-        <div class="award">
-          <h4>National Award (Institution)</h4>
-          <p>National Award for Outstanding Institution in the field of Hearing Impairment (2004).</p>
-        </div>
-
-        <div class="award">
-          <h4>National Employer Award</h4>
-          <p>National Award for Employer of Persons with Disabilities (2009).</p>
-        </div>
-
-        <div class="award">
-          <h4>Rev. Yanger Walling — Awards</h4>
-          <p>Multiple recognitions including National Award for Welfare of People with Disabilities (1999) and A. Kevichusa Citizenship Award (2023).</p>
-        </div>
-
-        <div class="award">
-          <h4>Alumni & Staff Awards</h4>
-          <p>Alumni national/state prizes in painting & poetry; Rotary award to staff (2001); Temsutola — National Award for Persons with Disabilities (2022).</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="container" aria-labelledby="reports">
-      <h2 id="reports">Annual activity snapshot</h2>
-      <p style="color:var(--gray);max-width:920px;margin-top:.6rem">Selected highlights from our annual activity reports (2022–2024).</p>
-
-      <div class="reports" style="margin-top:1.2rem">
-        <div class="report">
-          <h4>Annual Activity — 2022</h4>
-          <ul>
-            <li>Free education Nursery–Class 10 (offline); Classes 11–12 online.</li>
-            <li>Computer education for 31 Deaf; vocational training and teacher training.</li>
-            <li>Translated Book of Ruth into Naga Sign Language; free medical care to 70 students.</li>
-          </ul>
-          <a class="btn" href="#" style="margin-top:.6rem;display:inline-block">Download (PDF)</a>
-        </div>
-
-        <div class="report">
-          <h4>Annual Activity — 2023</h4>
-          <ul>
-            <li>Computer education for 22 Deaf; expanded training to Manipur & Sikkim personnel.</li>
-            <li>Translated Book of Ephesians into Naga Sign Language; continued interpretation services.</li>
-            <li>Employed 4 Deaf teachers; free medical care to 70 students.</li>
-          </ul>
-          <a class="btn" href="#" style="margin-top:.6rem;display:inline-block">Download (PDF)</a>
-        </div>
-
-        <div class="report">
-          <h4>Annual Activity — 2024</h4>
-          <ul>
-            <li>Computer education for 15 Deaf; trained personnel from Nagaland, Sikkim & USA.</li>
-            <li>Collaborated with SCERT to develop Certificate Course on Sign Language.</li>
-            <li>Employed 5 Deaf teachers; free medical care to 70 students.</li>
-          </ul>
-          <a class="btn" href="#" style="margin-top:.6rem;display:inline-block">Download (PDF)</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="container" aria-labelledby="partners">
-      <h2 id="partners">Partners & collaborators</h2>
-      <p style="color:var(--gray);max-width:920px;margin-top:.6rem">DBM works with government and civil society partners to extend reach and quality of services.</p>
-
-      <div class="partners" style="margin-top:1rem">
-        <div class="partner">SCERT Nagaland</div>
-        <div class="partner">Government of Nagaland (EMRS)</div>
-        <div class="partner">NEZCC</div>
-        <div class="partner">Rehabilitation Council of India (RCI)</div>
-        <div class="partner">India Council for Child Welfare</div>
-        <div class="partner">ERNET</div>
-      </div>
-    </section>
-
-    <section class="container" aria-labelledby="gallery">
-      <h2 id="gallery">Gallery</h2>
-      <p style="color:var(--gray);max-width:920px;margin-top:.6rem">A small selection of photos from our school, training workshops and events. Click to enlarge.</p>
-
-      <div class="gallery" style="margin-top:1rem">
-        <img src="assets/images/impact-1.jpg" alt="Students in classroom" data-full="assets/images/impact-1-large.jpg">
-        <img src="assets/images/impact-2.jpg" alt="Vocational training - weaving" data-full="assets/images/impact-2-large.jpg">
-        <img src="assets/images/impact-3.jpg" alt="Umang Festival participants" data-full="assets/images/impact-3-large.jpg">
-        <img src="assets/images/impact-4.jpg" alt="Computer class" data-full="assets/images/impact-4-large.jpg">
-        <img src="assets/images/impact-5.jpg" alt="Certificate course in sign language" data-full="assets/images/impact-5-large.jpg">
-        <img src="assets/images/impact-6.jpg" alt="Alumni receiving award" data-full="assets/images/impact-6-large.jpg">
-      </div>
-    </section>
-
-    <section class="container" aria-labelledby="join-cta">
-      <div class="cta-band white-card" id="join-cta" style="margin-top:1rem">
-        <div>
-          <p><strong>Join us</strong> — volunteer, partner, or support a student's education. Every contribution helps sustain education and livelihoods for the Deaf.</p>
-        </div>
-        <div style="display:flex;gap:.6rem;align-items:center">
-          <a class="btn" href="support.html">Donate / Support</a>
-          <a class="btn" href="contact.html">Contact Us</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="container">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
-      <div>
-        <strong style="font-family:'Playfair Display',serif;color:var(--primary)">Deaf Biblical Ministry</strong>
-        <div style="color:var(--gray);margin-top:.4rem">Dimapur, Nagaland — Registered society (Societies Act, 1860)</div>
-      </div>
-
-      <div style="color:var(--gray)">
-        <a href="contact.html">Contact</a> &nbsp; • &nbsp;
-        <a href="index.html">Home</a> &nbsp; • &nbsp;
-        <a href="impact.html">Impact</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Image modal -->
-  <div id="imgModal" class="modal" role="dialog" aria-hidden="true" aria-label="Image preview">
-    <button class="close" aria-label="Close image" id="modalClose">✕</button>
-    <img id="modalImg" src="" alt="">
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 
-  <script>
-    // Simple gallery modal
-    const galleryImgs = document.querySelectorAll('.gallery img');
-    const modal = document.getElementById('imgModal');
-    const modalImg = document.getElementById('modalImg');
-    const modalClose = document.getElementById('modalClose');
+  <div class="mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="impact.html">Impact</a>
+    <a href="index.html#programs">Programs</a>
+    <a href="index.html#support">Support Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
-    galleryImgs.forEach(img => {
-      img.addEventListener('click', () => {
-        const src = img.dataset.full || img.src;
-        modalImg.src = src;
-        modalImg.alt = img.alt || '';
-        modal.classList.add('open');
-        modal.setAttribute('aria-hidden','false');
-      });
-    });
+<header class="impact-hero">
+  <div class="container">
+    <h1>Our Impact</h1>
+    <p>Transforming lives since 1987 through education, vocational training, advocacy, and community outreach for the Deaf.</p>
+  </div>
+</header>
 
-    modalClose.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
+<section>
+  <div class="container">
+    <h2>At a Glance</h2>
+    <div class="stats-grid">
+      <div class="stat"><div class="big">1987</div><p>Year Established</p></div>
+      <div class="stat"><div class="big">70+</div><p>Students Served Annually</p></div>
+      <div class="stat"><div class="big">200+</div><p>Vocational Trainees</p></div>
+      <div class="stat"><div class="big">3–5</div><p>Deaf Staff Employed</p></div>
+    </div>
+  </div>
+</section>
 
-    function closeModal(){
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden','true');
-      modalImg.src = '';
-    }
-  </script>
+<section>
+  <div class="container">
+    <h2>Impact Highlights</h2>
+    <div class="two-col">
+      <div class="card">
+        <div class="placeholder"></div>
+        <h3>National Award Recipients</h3>
+        <p>DBM alumni and staff have received multiple state and national recognitions.</p>
+      </div>
+      <div class="card">
+        <div class="placeholder"></div>
+        <h3>Firsts in Nagaland</h3>
+        <p>Milestones in education, policing, arts, and public life by Deaf alumni.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/nav.js" defer></script>
 </body>
 </html>
