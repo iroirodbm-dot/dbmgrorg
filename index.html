@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Deaf Biblical Ministry</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -182,7 +183,7 @@
       <div class="mission">
         <h2>Who We Are</h2>
 
-        <div style="max-width:200px;margin:1.2rem auto 0;">
+        <div id="asl-welcome" style="max-width:200px;margin:1.2rem auto 0;">
           <lottie-player
             src="assets/lottie/asl-welcome.json"
             background="transparent"
@@ -267,6 +268,17 @@
   <script src="assets/js/nav.js" defer></script>
 
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<script>
+  var animation = lottie.loadAnimation({
+    container: document.getElementById('asl-welcome'), // the div created above
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'assets/lottie/asl-welcome.json' // path to your JSON file
+  });
+</script>
+
   
 </body>
 </html>
