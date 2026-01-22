@@ -1,204 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Our Impact • Deaf Biblical Ministry</title>
 
+  <link rel="icon" href="assets/images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/nav.css">
 
   <style>
-    :root{
-      --primary:#4a6fa5;
-      --accent:#d4a373;
-      --dark:#2d2d2d;
-      --light:#f8f9fa;
-      --gray:#6c757d;
+    :root {
+      --primary: #4a6fa5;
+      --accent: #d4a373;
+      --dark: #2d2d2d;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --header-bg:#C7D0EC;
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:var(--light);
-      color:var(--dark);
-      line-height:1.65;
-      padding-top:90px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    h1,h2,h3{
-      font-family:'Playfair Display',serif;
-      color:var(--primary);
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.65;
+      padding-top: 52px;
     }
 
-    h2{
-      font-size:2.6rem;
-      text-align:center;
-      margin-bottom:3rem;
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
     }
 
-    h3{
-      font-size:1.5rem;
-      margin-bottom:.6rem;
-      text-align:center;
+    p {
+      color: var(--gray);
+      text-align: center;
     }
 
-    p{
-      text-align:center;
-      color:var(--gray);
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    .container{
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 2rem;
+    /* Page Header */
+    .page-header {
+      padding-top: 140px;
+      padding-bottom: 4rem;
+      text-align: center;
+      background: var(--header-bg);
     }
 
-    /* Hero */
-    .impact-hero{
-      background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55));
-      min-height:420px;
-      display:flex;
-      align-items:center;
-      text-align:center;
-      color:white;
+    .page-header h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
     }
 
-    .impact-hero h1{
-      font-size:3.4rem;
-      margin-bottom:1rem;
+    .page-header p {
+      font-size: 1.3rem;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .impact-hero p{
-      max-width:800px;
-      margin:0 auto;
-      font-size:1.2rem;
-      opacity:.95;
-      color:white;
+    section {
+      padding: 6.5rem 0;
     }
 
-    section{
-      padding:6rem 0;
+    h2 {
+      font-size: 2.6rem;
+      margin-bottom: 3rem;
     }
 
     /* Stats */
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:2rem;
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
     }
 
-    .stat{
-      background:white;
-      padding:2.2rem;
-      border-radius:16px;
-      text-align:center;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);
+    .stat {
+      background: white;
+      padding: 2.4rem;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
     }
 
-    .stat .big{
-      font-size:2.6rem;
-      font-weight:700;
-      margin:.6rem 0;
-      color:var(--primary);
+    .stat .big {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: .6rem;
     }
 
-    /* Two column section */
-    .two-col{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:3rem;
-      align-items:start;
+    /* Impact Highlights */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
     }
 
-    .card{
-      background:white;
-      padding:2.4rem 2.2rem 2.6rem;
-      border-radius:18px;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
+    .card {
+      background: white;
+      padding: 2.6rem 2.4rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      margin-top: 1.6rem;
+      margin-bottom: .8rem;
     }
 
     /* Carousel */
-    .carousel{
-      position:relative;
-      width:100%;
-      max-width:420px;
-      margin:0 auto 1.8rem;
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
     }
 
-    .carousel-viewport{
-      width:100%;
-      height:220px;
-      overflow:hidden;
-      border-radius:14px;
-      background:#e9ecef;
+    .carousel-viewport {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #e9ecef;
     }
 
-    .carousel-track{
-      display:flex;
-      height:100%;
-      transition:transform .45s ease;
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform .45s ease;
     }
 
-    .carousel-track img{
-      width:100%;
-      height:100%;
-      flex-shrink:0;
-      object-fit:cover;
-      user-select:none;
-      pointer-events:none;
+    .carousel-track img {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
     }
 
-    .carousel-btn{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      background:rgba(0,0,0,.45);
-      color:#fff;
-      border:none;
-      width:38px;
-      height:38px;
-      border-radius:50%;
-      cursor:pointer;
-      z-index:2;
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,.45);
+      color: white;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
     }
 
-    .carousel-btn.prev{left:-16px}
-    .carousel-btn.next{right:-16px}
+    .carousel-btn.prev { left: -16px; }
+    .carousel-btn.next { right: -16px; }
 
-    .carousel-btn:hover{
-      background:rgba(0,0,0,.65);
-    }
-
-    /* Placeholder */
-    .placeholder{
-      width:100%;
-      max-width:420px;
-      height:220px;
-      background:#e9ecef;
-      border-radius:14px;
-      margin-bottom:1.8rem;
-    }
-
-    /* Responsive */
-    @media(max-width:1000px){
-      .two-col{
-        grid-template-columns:1fr;
+    @media (max-width: 1000px) {
+      .two-col {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media(max-width:600px){
-      h2{font-size:2.2rem}
-      .impact-hero h1{font-size:2.4rem}
-      .carousel-viewport,
-      .placeholder{
-        height:180px;
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2.6rem;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .carousel-viewport {
+        height: 180px;
       }
     }
   </style>
@@ -217,8 +213,8 @@
     <div class="nav-links">
       <a href="index.html#about">About</a>
       <a href="impact.html">Impact</a>
-      <a href="index.html#programs">Programs</a>
-      <a href="index.html#support">Support Us</a>
+      <a href="programs.html">Programs</a>
+      <a href="support.html">Support Us</a>
       <a href="contact.html">Contact</a>
     </div>
 
@@ -230,22 +226,25 @@
   <div class="mobile-menu">
     <a href="index.html#about">About</a>
     <a href="impact.html">Impact</a>
-    <a href="index.html#programs">Programs</a>
-    <a href="index.html#support">Support Us</a>
+    <a href="programs.html">Programs</a>
+    <a href="support.html">Support Us</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<header class="impact-hero">
+<section class="page-header">
   <div class="container">
     <h1>Our Impact</h1>
-    <p>Transforming lives since 1987 through education, vocational training, advocacy, and community outreach for the Deaf.</p>
+    <p>
+      Transforming lives since 1987 through education, vocational training, advocacy, and community outreach for the Deaf.
+    </p>
   </div>
-</header>
+</section>
 
 <section>
   <div class="container">
     <h2>At a Glance</h2>
+
     <div class="stats-grid">
       <div class="stat"><div class="big">1987</div><p>Year Established</p></div>
       <div class="stat"><div class="big">70+</div><p>Students Served Annually</p></div>
@@ -264,29 +263,36 @@
       <div class="card">
         <div class="carousel">
           <button class="carousel-btn prev">&#10094;</button>
-
           <div class="carousel-viewport">
             <div class="carousel-track">
               <img src="assets/images/awards/a.png" alt="">
               <img src="assets/images/awards/b.png" alt="">
               <img src="assets/images/awards/c.png" alt="">
               <img src="assets/images/awards/d.png" alt="">
-              <img src="assets/images/awards/e.png" alt="">
-              <img src="assets/images/awards/f.png" alt="">
             </div>
           </div>
-
           <button class="carousel-btn next">&#10095;</button>
         </div>
 
-        <h3>National Award Recipients</h3>
-        <p>DBM alumni and staff have received multiple state and national recognitions.</p>
+        <h3>National & State Award Recognition</h3>
+        <p>DBM members and alumni have received multiple state and national honors.</p>
       </div>
 
       <div class="card">
-        <div class="placeholder"></div>
+        <div class="carousel">
+          <button class="carousel-btn prev">&#10094;</button>
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <img src="assets/images/coming-soon.png" alt="">
+              <img src="assets/images/coming-soon.png" alt="">
+              <img src="assets/images/coming-soon.png" alt="">
+            </div>
+          </div>
+          <button class="carousel-btn next">&#10095;</button>
+        </div>
+
         <h3>Firsts in Nagaland</h3>
-        <p>Milestones in education, policing, arts, and public life by Deaf alumni.</p>
+        <p>Milestones in education, policing, arts, and public service by Deaf alumni.</p>
       </div>
 
     </div>
@@ -296,51 +302,27 @@
 <script src="assets/js/nav.js" defer></script>
 
 <script>
-document.querySelectorAll('.carousel').forEach(carousel => {
-  const track = carousel.querySelector('.carousel-track');
-  const slides = track.children;
-  const prev = carousel.querySelector('.prev');
-  const next = carousel.querySelector('.next');
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = track.children;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
 
-  let index = 0;
-  let paused = false;
-  let startX = 0;
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
 
-  function update(){
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
+    next.onclick = () => {
+      index = (index + 1) % slides.length;
+      update();
+    };
 
-  function nextSlide(){
-    index = (index + 1) % slides.length;
-    update();
-  }
-
-  function prevSlide(){
-    index = (index - 1 + slides.length) % slides.length;
-    update();
-  }
-
-  prev.addEventListener('click', prevSlide);
-  next.addEventListener('click', nextSlide);
-
-  carousel.addEventListener('mouseenter', () => paused = true);
-  carousel.addEventListener('mouseleave', () => paused = false);
-
-  carousel.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-    paused = true;
-  }, {passive:true});
-
-  carousel.addEventListener('touchend', e => {
-    const diff = e.changedTouches[0].clientX - startX;
-    if (Math.abs(diff) > 40) diff < 0 ? nextSlide() : prevSlide();
-    paused = false;
+    prev.onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    };
   });
-
-  setInterval(() => {
-    if (!paused) nextSlide();
-  }, 3000);
-});
 </script>
 
 </body>
