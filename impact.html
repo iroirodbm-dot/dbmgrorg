@@ -60,6 +60,23 @@
       padding-bottom: 4rem;
       text-align: center;
       background: var(--header-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:20%;
+      background: linear-gradient(
+        to bottom,
+        rgba(234,242,248,0.05) 0%,
+        var(--body-bg) 100%
+      );
+      pointer-events:none;
     }
 
     .page-header h1 {
