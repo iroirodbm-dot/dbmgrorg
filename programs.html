@@ -1,176 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Programs • Deaf Biblical Ministry</title>
 
+  <link rel="icon" href="assets/images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/nav.css">
 
   <style>
-    :root{
-      --primary:#4a6fa5;
-      --accent:#d4a373;
-      --dark:#2d2d2d;
-      --light:#f8f9fa;
-      --gray:#6c757d;
+    :root {
+      --primary: #4a6fa5;
+      --accent: #d4a373;
+      --dark: #2d2d2d;
+      --light: #f8f9fa;
+      --gray: #6c757d;
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:var(--light);
-      color:var(--dark);
-      line-height:1.65;
-      padding-top:90px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    h1,h2,h3{
-      font-family:'Playfair Display',serif;
-      color:var(--primary);
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.65;
+      padding-top: 52px;
     }
 
-    h2{
-      font-size:2.8rem;
-      text-align:center;
-      margin-bottom:3.5rem;
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--primary);
     }
 
-    p{
-      color:var(--gray);
+    p {
+      color: var(--gray);
     }
 
-    .container{
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 2rem;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    /* Hero */
-    .programs-hero{
-      padding-top:140px;
-      padding-bottom:4rem;
-      text-align:center;
-      background:white;
+    /* Page Header */
+    .page-header {
+      padding-top: 140px;
+      padding-bottom: 4rem;
+      text-align: center;
+      background: white;
     }
 
-    .programs-hero h1{
-      font-size:3.2rem;
-      color:var(--primary);
-      margin-bottom:1rem;
+    .page-header h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
     }
 
-    .programs-hero p{
-      font-size:1.3rem;
-      color:var(--gray);
-      max-width:700px;
-      margin:0 auto;
+    .page-header p {
+      font-size: 1.3rem;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    section{
-      padding:6.5rem 0;
+    section {
+      padding: 6.5rem 0;
     }
 
-    /* Program blocks */
-    .program{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:3.5rem;
-      align-items:start;
-      margin-bottom:6rem;
+    h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 3.5rem;
     }
 
-    .program:last-child{
-      margin-bottom:0;
+    /* Program Blocks */
+    .program {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+      margin-bottom: 6rem;
     }
 
-    .program-content h3{
-      font-size:2rem;
-      margin-bottom:1.2rem;
+    .program:last-child {
+      margin-bottom: 0;
     }
 
-    .program-content ul{
-      margin-top:1.2rem;
-      padding-left:1.2rem;
+    .program-content h3 {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
     }
 
-    .program-content li{
-      margin-bottom:.6rem;
+    .program-content ul {
+      margin-top: 1.2rem;
+      padding-left: 1.2rem;
+    }
+
+    .program-content li {
+      margin-bottom: .6rem;
     }
 
     /* Carousel */
-    .carousel{
-      position:relative;
-      width:100%;
-      max-width:460px;
-      margin:0 auto;
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
     }
 
-    .carousel-viewport{
-      width:100%;
-      height:240px;
-      overflow:hidden;
-      border-radius:16px;
-      background:#e9ecef;
+    .carousel-viewport {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #e9ecef;
     }
 
-    .carousel-track{
-      display:flex;
-      height:100%;
-      transition:transform .45s ease;
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform .45s ease;
     }
 
-    .carousel-track img,
-    .carousel-track video{
-      width:100%;
-      height:100%;
-      flex-shrink:0;
-      object-fit:cover;
-      user-select:none;
-      pointer-events:none;
+    .carousel-track img {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
     }
 
-    .carousel-btn{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      background:rgba(0,0,0,.45);
-      color:#fff;
-      border:none;
-      width:40px;
-      height:40px;
-      border-radius:50%;
-      cursor:pointer;
-      z-index:2;
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,.45);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
     }
 
-    .carousel-btn.prev{left:-18px}
-    .carousel-btn.next{right:-18px}
-
-    .carousel-btn:hover{
-      background:rgba(0,0,0,.65);
+    .carousel-btn.prev {
+      left: -18px;
     }
 
-    /* Responsive */
-    @media(max-width:1000px){
-      .program{
-        grid-template-columns:1fr;
-        text-align:center;
+    .carousel-btn.next {
+      right: -18px;
+    }
+
+    @media (max-width: 1000px) {
+      .program {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
-      .program-content ul{
-        text-align:left;
-        display:inline-block;
+
+      .program-content ul {
+        text-align: left;
+        display: inline-block;
       }
     }
 
-    @media(max-width:768px){
-      h2{font-size:2.6rem}
-      .programs-hero h1{font-size:2.6rem}
-      .carousel-viewport{height:190px}
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2.6rem;
+      }
+
+      h2 {
+        font-size: 2.3rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .carousel-viewport {
+        height: 190px;
+      }
     }
   </style>
 </head>
@@ -207,19 +222,20 @@
   </div>
 </nav>
 
-<header class="programs-hero">
+<section class="page-header">
   <div class="container">
     <h1>Our Programs</h1>
-    <p>Holistic education, skill development, and community support designed to empower Deaf individuals toward dignity, independence, and inclusion.</p>
+    <p>
+      Holistic education, skill development, and community support designed to empower Deaf individuals toward dignity, independence, and inclusion.
+    </p>
   </div>
-</header>
+</section>
 
 <section>
   <div class="container">
 
     <h2>What We Do</h2>
 
-    <!-- Education -->
     <div class="program">
       <div class="carousel">
         <button class="carousel-btn prev">&#10094;</button>
@@ -236,8 +252,7 @@
       <div class="program-content">
         <h3>Education for the Deaf</h3>
         <p>
-          DBM runs a residential School for the Deaf in Dimapur, providing free education and accommodation
-          to Deaf children from underserved backgrounds.
+          DBM runs a residential School for the Deaf in Dimapur, providing free education and accommodation to Deaf children from all backgrounds.
         </p>
         <ul>
           <li>Nursery to Class X education</li>
@@ -248,7 +263,6 @@
       </div>
     </div>
 
-    <!-- Vocational -->
     <div class="program">
       <div class="carousel">
         <button class="carousel-btn prev">&#10094;</button>
@@ -265,8 +279,7 @@
       <div class="program-content">
         <h3>Vocational Training & Placement</h3>
         <p>
-          DBM focuses on rehabilitation through self-reliance, equipping Deaf adults with
-          employable skills and supporting long-term livelihoods.
+          DBM focuses on rehabilitation through self-reliance, equipping Deaf adults with employable skills and supporting long-term livelihoods.
         </p>
         <ul>
           <li>Crafts, tailoring, carpentry, bamboo & furniture making</li>
@@ -277,7 +290,6 @@
       </div>
     </div>
 
-    <!-- Community -->
     <div class="program">
       <div class="carousel">
         <button class="carousel-btn prev">&#10094;</button>
@@ -294,8 +306,7 @@
       <div class="program-content">
         <h3>Special Initiatives & Community Outreach</h3>
         <p>
-          DBM serves as a central support system for Deaf participation, accessibility,
-          and inclusion across society.
+          DBM serves as a central support system for Deaf participation, accessibility, and inclusion across society.
         </p>
         <ul>
           <li>Professional sign-language interpretation services</li>
@@ -312,35 +323,27 @@
 <script src="assets/js/nav.js" defer></script>
 
 <script>
-document.querySelectorAll('.carousel').forEach(carousel=>{
-  const track=carousel.querySelector('.carousel-track');
-  const slides=track.children;
-  const prev=carousel.querySelector('.prev');
-  const next=carousel.querySelector('.next');
-  let index=0,paused=false,startX=0;
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = track.children;
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
 
-  function update(){track.style.transform=`translateX(-${index*100}%)`}
-  function nextSlide(){index=(index+1)%slides.length;update()}
-  function prevSlide(){index=(index-1+slides.length)%slides.length;update()}
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
 
-  prev.onclick=prevSlide;
-  next.onclick=nextSlide;
+    next.onclick = () => {
+      index = (index + 1) % slides.length;
+      update();
+    };
 
-  carousel.onmouseenter=()=>paused=true;
-  carousel.onmouseleave=()=>paused=false;
-
-  carousel.addEventListener('touchstart',e=>{
-    startX=e.touches[0].clientX;paused=true;
-  },{passive:true});
-
-  carousel.addEventListener('touchend',e=>{
-    const diff=e.changedTouches[0].clientX-startX;
-    if(Math.abs(diff)>40) diff<0?nextSlide():prevSlide();
-    paused=false;
+    prev.onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    };
   });
-
-  setInterval(()=>{if(!paused)nextSlide()},3000);
-});
 </script>
 
 </body>
