@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Academics • School for the Deaf</title>
+
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/nav.css">
+
+  <style>
+    :root{
+      --primary:#4a6fa5;
+      --accent:#d4a373;
+      --dark:#2d2d2d;
+      --light:#f8f9fa;
+      --gray:#6c757d;
+      --header-bg:#C7D0EC;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--light);
+      color:var(--dark);
+      line-height:1.7;
+      padding-top:88px;
+    }
+
+    h1,h2,h3{
+      font-family:'Playfair Display',serif;
+      font-weight:700;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 2rem;
+    }
+
+    /* Page Header */
+    .page-header{
+      padding:5rem 0 4rem;
+      text-align:center;
+      background:var(--header-bg);
+    }
+
+    .page-header h1{
+      font-size:3rem;
+      color:var(--primary);
+      margin-bottom:1rem;
+    }
+
+    .page-header p{
+      font-size:1.25rem;
+      color:var(--gray);
+      max-width:720px;
+      margin:0 auto;
+    }
+
+    /* Academics Sub Navigation */
+    .academics-subnav{
+      background:white;
+      border-bottom:1px solid #e5e7eb;
+      position:sticky;
+      top:88px;
+      z-index:900;
+    }
+
+    .academics-subnav ul{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      list-style:none;
+    }
+
+    .academics-subnav a{
+      padding:1rem 1.4rem;
+      display:block;
+      text-decoration:none;
+      color:var(--dark);
+      font-weight:500;
+      font-size:0.95rem;
+    }
+
+    .academics-subnav a:hover{
+      color:var(--primary);
+    }
+
+    .academics-subnav .disabled{
+      opacity:.45;
+      cursor:not-allowed;
+    }
+
+    section{
+      padding:5.5rem 0;
+    }
+
+    /* Content Blocks */
+    .content-block{
+      max-width:850px;
+      margin:0 auto;
+      text-align:center;
+    }
+
+    .content-block h2{
+      font-size:2.4rem;
+      color:var(--primary);
+      margin-bottom:1.2rem;
+    }
+
+    .content-block p{
+      color:var(--gray);
+      font-size:1.1rem;
+    }
+
+    /* Cards */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:2.5rem;
+      margin-top:3.5rem;
+    }
+
+    .card{
+      background:white;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 12px 35px rgba(0,0,0,.08);
+      transition:transform .35s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:2rem;
+    }
+
+    .card h3{
+      margin-bottom:.8rem;
+      font-size:1.6rem;
+    }
+
+    .card p{
+      color:var(--gray);
+    }
+
+    /* Coming Soon */
+    .coming-soon{
+      background:white;
+      border-radius:18px;
+      padding:3rem;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      text-align:center;
+    }
+
+    .coming-soon img{
+      max-width:240px;
+      margin-bottom:1.5rem;
+      opacity:.85;
+    }
+
+    .coming-soon h3{
+      color:var(--primary);
+      margin-bottom:.8rem;
+    }
+
+    /* Footer spacing harmony */
+    .spacer{
+      height:3rem;
+    }
+
+    @media(max-width:768px){
+      .page-header h1{font-size:2.4rem}
+      .academics-subnav ul{justify-content:flex-start}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Shared Navbar -->
+<nav>
+  <div class="nav-container container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/images/dbm-logo.png" alt="Deaf Biblical Ministry logo">
+      </a>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="impact.html">Impact</a>
+      <a href="programs.html">Programs</a>
+      <a href="support.html">Support Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="impact.html">Impact</a>
+    <a href="programs.html">Programs</a>
+    <a href="support.html">Support Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- Header -->
+<section class="page-header">
+  <div class="container">
+    <h1>Academics</h1>
+    <p>
+      A structured, inclusive, and visually accessible academic programme under the
+      School for the Deaf.
+    </p>
+  </div>
+</section>
+
+<!-- Sub Navigation -->
+<div class="academics-subnav">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#curriculum">Curriculum</a></li>
+    <li><a href="#assessment">Assessment</a></li>
+    <li><a href="#calendar">Academic Calendar</a></li>
+    <li><a class="disabled">Parent & Student Portal</a></li>
+    <li><a class="disabled">Fees & Payments</a></li>
+  </ul>
+</div>
+
+<!-- Overview -->
+<section id="overview">
+  <div class="container content-block">
+    <h2>Our Academic Approach</h2>
+    <p>
+      Education at the School for the Deaf is grounded in language access,
+      visual learning, and individualised academic development, enabling students
+      to learn with confidence and dignity.
+    </p>
+  </div>
+</section>
+
+<!-- Curriculum -->
+<section id="curriculum">
+  <div class="container">
+    <div class="content-block">
+      <h2>Curriculum Structure</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <img src="assets/images/coming-soon.png" alt="Early Learning">
+        <div class="card-content">
+          <h3>Early Learning</h3>
+          <p>Foundational language development, motor skills, and visual learning.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/coming-soon.png" alt="Primary Education">
+        <div class="card-content">
+          <h3>Primary Education</h3>
+          <p>Literacy, numeracy, environmental studies, and structured academics.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/coming-soon.png" alt="Life Skills">
+        <div class="card-content">
+          <h3>Life & Vocational Skills</h3>
+          <p>Practical skills preparing students for independence and work life.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Assessment -->
+<section id="assessment">
+  <div class="container content-block">
+    <h2>Assessment & Progress</h2>
+    <p>
+      Student progress is evaluated through continuous, activity-based, and
+      visually supported assessments, respecting each learner’s pace.
+    </p>
+  </div>
+</section>
+
+<!-- Calendar -->
+<section id="calendar">
+  <div class="container">
+    <div class="coming-soon">
+      <img src="assets/images/coming-soon.png" alt="Coming Soon">
+      <h3>Academic Calendar</h3>
+      <p>Detailed academic schedules, holidays, and notices will be published here.</p>
+    </div>
+  </div>
+</section>
+
+<div class="spacer"></div>
+
+<script src="assets/js/nav.js" defer></script>
+</body>
+</html>
