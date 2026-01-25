@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Academics • School for the Deaf</title>
+
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Shared Nav CSS -->
+  <link rel="stylesheet" href="assets/css/nav.css">
+
+  <style>
+    :root{
+      --primary:#4a6fa5;
+      --accent:#d4a373;
+      --dark:#2d2d2d;
+      --light:#f9f9f9;
+    }
+
+    body{
+      margin:0;
+      font-family:'Inter', sans-serif;
+      background:var(--light);
+      color:var(--dark);
+    }
+
+    h1,h2,h3{
+      font-family:'Playfair Display', serif;
+      margin-bottom:0.5rem;
+    }
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                 url('assets/images/coming-soon.png') center/cover no-repeat;
+      color:#fff;
+      text-align:center;
+      padding:5rem 1.5rem;
+    }
+
+    .hero h1{
+      font-size:2.8rem;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:1rem auto 0;
+      font-size:1.1rem;
+    }
+
+    /* Section */
+    .section{
+      max-width:1100px;
+      margin:4rem auto;
+      padding:0 1.5rem;
+    }
+
+    .intro{
+      text-align:center;
+      max-width:800px;
+      margin:0 auto 3rem;
+    }
+
+    /* Cards */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:2rem;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:14px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      padding:2rem;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card h3{
+      margin-top:0;
+    }
+
+    .badge{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      font-size:0.75rem;
+      padding:0.3rem 0.7rem;
+      border-radius:20px;
+      margin-bottom:0.8rem;
+    }
+
+    .coming{
+      margin-top:1.5rem;
+      text-align:center;
+      opacity:0.85;
+    }
+
+    .coming img{
+      max-width:120px;
+      display:block;
+      margin:0 auto 0.5rem;
+    }
+
+    /* CTA */
+    .cta{
+      background:var(--primary);
+      color:#fff;
+      text-align:center;
+      padding:4rem 1.5rem;
+      margin-top:4rem;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:1rem auto 0;
+    }
+
+    @media(max-width:600px){
+      .hero h1{
+        font-size:2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV (same structure as other pages) -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">Deaf Biblical Ministry</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="academics.html" class="active">Academics</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>School for the Deaf – Academics</h1>
+    <p>
+      Providing inclusive, faith-rooted education that empowers deaf students
+      academically, socially, and spiritually.
+    </p>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="intro">
+      <h2>Academic Life at DBM</h2>
+      <p>
+        Our academic program is designed specifically for deaf learners,
+        combining accessible teaching methods, compassionate mentorship,
+        and strong moral foundations.
+      </p>
+    </div>
+
+    <!-- SUB-SECTIONS -->
+    <div class="grid">
+
+      <!-- Parents -->
+      <div class="card">
+        <span class="badge">Parents</span>
+        <h3>Parent Portal</h3>
+        <p>
+          A dedicated space for parents to stay informed about their child’s
+          academic progress, announcements, schedules, and school communication.
+        </p>
+
+        <div class="coming">
+          <img src="assets/images/coming-soon.png" alt="Coming Soon">
+          <small>Secure parent login coming soon</small>
+        </div>
+      </div>
+
+      <!-- Students -->
+      <div class="card">
+        <span class="badge">Students</span>
+        <h3>Student Access</h3>
+        <p>
+          Students will be able to access learning materials, school notices,
+          and academic resources in an accessible digital environment.
+        </p>
+
+        <div class="coming">
+          <img src="assets/images/coming-soon.png" alt="Coming Soon">
+          <small>Student dashboard under development</small>
+        </div>
+      </div>
+
+      <!-- Fees -->
+      <div class="card">
+        <span class="badge">Fees</span>
+        <h3>Fees & Payments</h3>
+        <p>
+          Transparent and secure fee management, including online payments,
+          receipts, and payment history for parents.
+        </p>
+
+        <div class="coming">
+          <img src="assets/images/coming-soon.png" alt="Coming Soon">
+          <small>Online fee payment system launching soon</small>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Building for the Future</h2>
+    <p>
+      These academic systems are being carefully developed to ensure privacy,
+      accessibility, and ease of use for our students, parents, and administrators.
+    </p>
+  </section>
+
+</body>
+</html>
